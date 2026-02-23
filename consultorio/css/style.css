@@ -1,0 +1,165 @@
+/* Reset e fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fundo da tela com imagem */
+body {
+    background-image: url('https://images.pexels.com/photos/3845746/pexels-photo-3845746.jpeg?auto=compress&cs=tinysrgb&w=1920'); /* Exemplo de consultório moderno */
+    background-size: cover;       /* Faz a imagem cobrir toda a tela */
+    background-position: center;   /* Centraliza a imagem */
+    background-repeat: no-repeat;  /* Evita repetição */
+    background-attachment: fixed;  /* Imagem fixa ao rolar */
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Filtro escuro opcional para destacar o conteúdo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 1px 1px 6px #000;
+}
+
+header h1 {
+    font-size: 2.4rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Grid principal */
+.medicos-grid {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+/* Colunas */
+.coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Cards */
+.medico-card {
+    padding: 25px 20px;
+    border-radius: 25px;
+    text-align: center;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #1e3a8a;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.medico-card:hover {
+    transform: translateY(-8px) scale(1.06);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.modal-content input, .modal-content button {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.modal-content button {
+    background-color: #1e3a8a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.modal-content button:hover {
+    background-color: #3749b0;
+    transform: scale(1.03);
+}
+
+.sucesso {
+    display: none;
+    margin-top: 10px;
+    color: #16a34a;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
+/* Responsivo */
+@media(max-width: 900px){
+    .medicos-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
