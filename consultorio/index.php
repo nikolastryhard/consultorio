@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento Médico</title>
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="2.css">
 </head>
 <body>
     <header>
@@ -57,6 +57,10 @@
             <p id="mensagem-sucesso" class="sucesso">Consulta agendada com sucesso!</p>
         </div>
     </div>
+
+     <?php if(isset($_GET['sucesso'])): ?>
+                <p class="sucesso">Consulta agendada com sucesso!</p>
+            <?php endif; ?>
 
     <script>
         let medicoSelecionado = "";

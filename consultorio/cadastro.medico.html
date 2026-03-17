@@ -1,0 +1,77 @@
+<main>
+    <!-- Grid de médicos -->
+    <section class="medicos-grid">
+        <div class="medico-card" onclick="abrirModal('Dr. Joberto', 'Ortopedia', 'Dr. Joberto é especialista em coluna e ortopedia.')">
+            <h3>Dr. Joberto</h3>
+            <p>Ortopedia</p>
+        </div>
+        <div class="medico-card" onclick="abrirModal('Dra. Ana', 'Cardiologia', 'Dra. Ana é especialista em cardiologia.')">
+            <h3>Dra. Ana</h3>
+            <p>Cardiologia</p>
+        </div>
+        <div class="medico-card" onclick="abrirModal('Dr. Carlos', 'Dermatologia', 'Dr. Carlos é especialista em dermatologia.')">
+            <h3>Dr. Carlos</h3>
+            <p>Dermatologia</p>
+        </div>
+        <div class="medico-card" onclick="abrirModal('Dra. Beatriz', 'Pediatria', 'Dra. Beatriz é especialista em pediatria.')">
+            <h3>Dra. Beatriz</h3>
+            <p>Pediatria</p>
+        </div>
+        <div class="medico-card" onclick="abrirModal('Dr. Rafael', 'Neurologia', 'Dr. Rafael é especialista em neurologia.')">
+            <h3>Dr. Rafael</h3>
+            <p>Neurologia</p>
+        </div>
+        <div class="medico-card" onclick="abrirModal('Dra. Camila', 'Ginecologia', 'Dra. Camila é especialista em ginecologia.')">
+            <h3>Dra. Camila</h3>
+            <p>Ginecologia</p>
+        </div>
+    </section>
+
+    <!-- Modal para agendamento -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2 id="nome-medico">Agendar consulta</h2>
+            <p id="especialidade-medico"></p>
+
+            <form id="form-agendamento">
+                <label for="data">Escolha uma data:</label>
+                <input type="date" id="data" name="data" required>
+
+                <label for="hora">Escolha um horário:</label>
+                <input type="time" id="hora" name="hora" required>
+
+                <label for="nome">Seu nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+                <label for="email">Seu e-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+
+                <button type="submit">Agendar Consulta</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o modal
+        function abrirModal(nome, especialidade, descricao) {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('nome-medico').innerText = nome;
+            document.getElementById('especialidade-medico').innerText = especialidade + ' - ' + descricao;
+        }
+
+        // Função para fechar o modal
+        function fecharModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Fechar o modal se o usuário clicar fora da caixa
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                fecharModal();
+            }
+        }
+    </script>
+
+<link rel="stylesheet" href="css/2.css">
+</main>
